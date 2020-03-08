@@ -40,6 +40,9 @@
                                     <color key="titleColor" red="0.917793869972229" green="0.92087596654891968" blue="0.84718114137649536" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2xk-g6-8fU" kind="show" id="RLi-aO-2qF"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coffeeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rMK-i3-F9k">
                                 <rect key="frame" x="17" y="125" width="382" height="314"/>
@@ -69,9 +72,43 @@
             </objects>
             <point key="canvasLocation" x="623" y="-283"/>
         </scene>
+        <!--Gues Menu View Controller-->
+        <scene sceneID="cbY-Kr-K3C">
+            <objects>
+                <viewController id="2xk-g6-8fU" customClass="GuesMenuViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Sw-0M-Sh4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="F5V-X0-bXa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwU-S9-WZO">
+                                <rect key="frame" x="20" y="696" width="374" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4526491117" green="0.052256722390000003" blue="0.001285287749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="29"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" white="0.86642247439999998" alpha="1" colorSpace="deviceWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnExit:" destination="2xk-g6-8fU" eventType="touchUpInside" id="sPU-c2-Q9k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yp2-PE-1n4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fo0-p7-oQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350.7246376811595" y="-283.25892857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="3595" height="5393"/>
+        <image name="background2" width="1920" height="1280"/>
         <image name="coffeeLogo" width="561" height="482"/>
     </resources>
 </document>
