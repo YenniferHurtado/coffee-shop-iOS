@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3253663024157AE100D01617 /* GuestMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253662F24157AE100D01617 /* GuestMenuViewController.swift */; };
+		325366332415BF4D00D01617 /* CoffeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325366312415BF4D00D01617 /* CoffeeCell.swift */; };
+		325366342415BF4D00D01617 /* CoffeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325366322415BF4D00D01617 /* CoffeeCell.xib */; };
 		520D18C52314477200CFAD58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D18C42314477200CFAD58 /* AppDelegate.swift */; };
 		520D18C72314477200CFAD58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D18C62314477200CFAD58 /* LoginViewController.swift */; };
 		520D18CA2314477200CFAD58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520D18C82314477200CFAD58 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		3253662F24157AE100D01617 /* GuestMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMenuViewController.swift; sourceTree = "<group>"; };
+		325366312415BF4D00D01617 /* CoffeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCell.swift; sourceTree = "<group>"; };
+		325366322415BF4D00D01617 /* CoffeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeCell.xib; sourceTree = "<group>"; };
 		520D18C12314477200CFAD58 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		520D18C42314477200CFAD58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520D18C62314477200CFAD58 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				520D18CD2314477400CFAD58 /* LaunchScreen.storyboard */,
 				520D18D02314477400CFAD58 /* Info.plist */,
 				3253662F24157AE100D01617 /* GuestMenuViewController.swift */,
+				325366312415BF4D00D01617 /* CoffeeCell.swift */,
+				325366322415BF4D00D01617 /* CoffeeCell.xib */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 				520D18CF2314477400CFAD58 /* LaunchScreen.storyboard in Resources */,
 				520D18CC2314477400CFAD58 /* Assets.xcassets in Resources */,
 				520D18CA2314477200CFAD58 /* Main.storyboard in Resources */,
+				325366342415BF4D00D01617 /* CoffeeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 				520D18C72314477200CFAD58 /* LoginViewController.swift in Sources */,
 				3253663024157AE100D01617 /* GuestMenuViewController.swift in Sources */,
 				520D18C52314477200CFAD58 /* AppDelegate.swift in Sources */,
+				325366332415BF4D00D01617 /* CoffeeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,24 +2,59 @@
 import UIKit
 
 class GuesMenuViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var nib: UINib = UINib()
+    
+    var coffeList: Dictionary<String,String> = ["Irish":"5",
+                                                "Ristretto":"5",
+                                                "Mocha":"5",
+                                                "Coretto":"3",
+                                                "Glace":"5",
+                                                "Americano":"2",
+                                                "Made Raf":"2",
+                                                "Romano":"1",
+                                                "Machchiato":"2",
+                                                "Latte":"2",
+                                                "Cappucchino":"2",
+                                                "Frappe":"2"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("GuesMenuView")
+        self.nib = UINib.init(nibName: "CoffeeCell", bundle: nil)
     }
     @IBAction func btnExit(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-extension GuesMenuViewController : UITableViewDataSource, UITableViewDelegate {
+    extension GuesMenuViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return coffeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListItem", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        
+        cell.textLabel?.text = Array(coffeList)[indexPath.row].key
+        cell.detailTextLabel?.text = "Price: $\(Array(coffeList)[indexPath.row].value)"
+        cell.accessoryType = .none
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+            } else {
+                cell.accessoryType = .checkmark
+            }
+        }
     }
 }
 
