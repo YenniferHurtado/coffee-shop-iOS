@@ -5,6 +5,7 @@ class GuesMenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var nib: UINib = UINib()
+    var totalPrice : Int = 0
     
     var coffeList: Dictionary<String,String> = ["Irish":"5",
                                                 "Ristretto":"5",
@@ -42,7 +43,7 @@ class GuesMenuViewController: UIViewController {
         let coffeePrice = Array(coffeList)[indexPath.row].value
         
         cell.name.text? = coffeeName
-        cell.price.text? = coffeePrice
+        cell.price.text? = "$\(coffeePrice).00"
         cell.ImageCoffee.image = UIImage.init(named: coffeeName)
         
 //        cell.textLabel?.text = Array(coffeList)[indexPath.row].key
@@ -56,16 +57,24 @@ class GuesMenuViewController: UIViewController {
             return 110.00
         }
         
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
-            if cell.accessoryType == .checkmark {
-                cell.accessoryType = .none
-            } else {
-                cell.accessoryType = .checkmark
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            let coffeePrice = Int(Array(coffeList)[indexPath.row].value)!
+            
+            if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+                if cell.accessoryType == .checkmark {
+                    cell.accessoryType = .none
+                    calculatePrice(-coffeePrice)
+                } else {
+                    cell.accessoryType = .checkmark
+                    calculatePrice(coffeePrice)
+                }
             }
         }
-    }
+        
+        func calculatePrice(_ coffeePrice: Int) {
+            totalPrice += coffeePrice
+        }
 }
 
