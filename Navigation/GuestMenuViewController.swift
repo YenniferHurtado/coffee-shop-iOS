@@ -35,16 +35,27 @@ class GuesMenuViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CoffeeCell
         
+        let coffeeName = Array(coffeList)[indexPath.row].key
+        let coffeePrice = Array(coffeList)[indexPath.row].value
         
-        cell.textLabel?.text = Array(coffeList)[indexPath.row].key
-        cell.detailTextLabel?.text = "Price: $\(Array(coffeList)[indexPath.row].value)"
+        cell.name.text? = coffeeName
+        cell.price.text? = coffeePrice
+        cell.ImageCoffee.image = UIImage.init(named: coffeeName)
+        
+//        cell.textLabel?.text = Array(coffeList)[indexPath.row].key
+//        cell.detailTextLabel?.text = Array(coffeList)[indexPath.row].value
         cell.accessoryType = .none
         
         return cell
     }
     
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 110.00
+        }
+        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
