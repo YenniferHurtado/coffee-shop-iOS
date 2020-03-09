@@ -4,6 +4,7 @@ import UIKit
 class GuesMenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     var nib: UINib = UINib()
     var totalPrice : Int = 0
     
@@ -75,6 +76,7 @@ class GuesMenuViewController: UIViewController {
         
         func calculatePrice(_ coffeePrice: Int) {
             totalPrice += coffeePrice
+            totalPriceLabel.text = "Total : $\(totalPrice).00"
         }
 }
 
